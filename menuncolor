@@ -1,0 +1,72 @@
+#include <iostream>
+
+void displayMenu() {
+    std::cout << "=== GAME MENU ===" << std::endl;
+    std::cout << "1. 1 Player" << std::endl;
+    std::cout << "2. 2 Players" << std::endl;
+    std::cout << "3. Map" << std::endl;
+    std::cout << "4. Settings" << std::endl;
+    std::cout << "5. User Manual" << std::endl;
+    std::cout << "6. Select Color" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "================" << std::endl;
+}
+
+void handleOption(int option) {
+    switch (option) {
+        case 1:
+            std::cout << "1 Player option selected." << std::endl;
+            // Perform 1 player game logic
+            break;
+        case 2:
+            std::cout << "2 Players option selected." << std::endl;
+            // Perform 2 players game logic
+            break;
+        case 3:
+            std::cout << "Map option selected." << std::endl;
+            // Show map or perform map-related operations
+            break;
+        case 4:
+            std::cout << "Settings option selected." << std::endl;
+            // Show settings or perform settings-related operations
+            break;
+        case 5:
+            std::cout << "User Manual option selected." << std::endl;
+            // Show user manual
+            break;
+        case 6:
+            std::cout << "Select Color option selected." << std::endl;
+            // Prompt the user to select a color
+            std::cout << "Available colors: Red, Green, Blue" << std::endl;
+            std::cout << "Enter your color choice: ";
+            std::string color;
+            std::cin >> color;
+            std::cout << "Selected color: " << color << std::endl;
+            break;
+        case 0:
+            std::cout << "Exiting the game. Goodbye!" << std::endl;
+            // Perform any necessary cleanup and exit the program
+            break;
+        default:
+            std::cout << "Invalid option. Please select a valid option." << std::endl;
+            break;
+    }
+}
+
+int main() {
+    int option;
+
+    do {
+        displayMenu();
+
+        std::cout << "Enter your choice: ";
+        std::cin >> option;
+
+        handleOption(option);
+
+        std::cout << std::endl;
+
+    } while (option != 0);
+
+    return 0;
+}
