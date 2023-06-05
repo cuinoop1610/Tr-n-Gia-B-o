@@ -1,0 +1,49 @@
+#include <iostream>
+
+// Color codes
+const std::string RESET_COLOR = "\033[0m";
+const std::string RED_COLOR = "\033[31m";
+const std::string GREEN_COLOR = "\033[32m";
+const std::string BLUE_COLOR = "\033[34m";
+const std::string YELLOW_COLOR = "\033[33m";
+
+// Function to set the text color
+void setTextColor(const std::string& color) {
+    std::cout << color;
+}
+
+int main() {
+    std::cout << "Color Selection" << std::endl;
+    std::cout << "1. Red" << std::endl;
+    std::cout << "2. Green" << std::endl;
+    std::cout << "3. Blue" << std::endl;
+    std::cout << "4. Yellow" << std::endl;
+
+    int choice;
+    std::cout << "Enter your choice: ";
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1:
+            setTextColor(RED_COLOR);
+            break;
+        case 2:
+            setTextColor(GREEN_COLOR);
+            break;
+        case 3:
+            setTextColor(BLUE_COLOR);
+            break;
+        case 4:
+            setTextColor(YELLOW_COLOR);
+            break;
+        default:
+            setTextColor(RESET_COLOR);
+            std::cout << "Invalid choice. Resetting to default color." << std::endl;
+            break;
+    }
+
+    std::cout << "This text will be displayed in the selected color!" << std::endl;
+    setTextColor(RESET_COLOR); // Reset the color back to default
+
+    return 0;
+}
