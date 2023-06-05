@@ -1,0 +1,54 @@
+include <iostream>
+#include <vector>
+
+using namespace std;
+
+// ham dieu huong và tich luy 
+int navigateMaze(vector<vector<int>>& maze, int x, int y, int& points) {
+    // kiem tra vi tri da nam ngoai gioi han
+    if (x < 0 || x >= maze.size() || y < 0 || y >= maze[0].size() || maze[x][y] == 0) {
+        return 0;
+    }
+    
+    int currentPoints = maze[x][y];  // diem tai o hien tai
+    maze[x][y] = 0;  // danh dau o hien tai da di 
+    
+    // dieu huong theo 4 huong
+    int top = navigateMaze(maze, x-1, y, points);
+    int bottom = navigateMaze(maze, x+1, y, points);
+    int left = navigateMaze(maze, x, y-1, points);
+    int right = navigateMaze(maze, x, y+1, points);
+    
+    // chon huong co gia tri lon nhat
+    int maxPoints = max(max(top, bottom), max(left, right));
+    
+    points += currentPoints + maxPoints;  // tich luy diem
+    
+    return currentPoints + maxPoints;
+}
+
+int main() {
+    // vi du
+    vector<vector<int>> maze = {
+        {2, 3, 16, 56, 87, 100, 101, 66, 543, 200},
+        {150, 154, 178, 76, 54, 43, 27, 4},
+        {2, 1, 14, 12, 17},
+        {3, 16, 22, 91, 23},
+        {4, 56, 87, 31, 65},
+        {27, 43, 90, 100, 101},
+        {76, 54, 32, 99, 66},
+        {178, 154, 150, 200, 543}
+    };
+
+    int startX = 0;  // vi tri bat dau theo truc x
+    int startY = 0;  // vi tri bat dau theo truc y
+    int points = 0;  // tong diem tich luy
+
+    // dieu huong trong me cung
+    navigateMaze(maze, startX, startY, points);
+
+    // xuat tong diem tich 
+    cout << "tong diem tich : " << points << endl;
+
+    return 0;
+}
