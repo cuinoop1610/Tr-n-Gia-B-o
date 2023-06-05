@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+    std::cout << "Welcome to the Game!" << std::endl;
+    std::cout << "Get ready for an exciting gaming experience!" << std::endl;
+    std::cout << "Press any key to enter the menu." << std::endl;
+
+    // Wait for user input
+    std::cin.ignore();
+
+    // Clear the console screen
+    std::cout << "\033[2J\033[1;1H";
+
+    // Proceed to the menu
+    // Include the code for the menu here
+
+    return 0;
+}
