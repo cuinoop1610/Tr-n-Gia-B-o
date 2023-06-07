@@ -17,27 +17,21 @@ void handleOption(int option) {
     switch (option) {
         case 1:
             std::cout << "1 Player option selected." << std::endl;
-            // Perform 1 player game logic
             break;
         case 2:
-            std::cout << "2 Players option selected." << std::endl;
-            // Perform 2 players game logic
+            std::cout << "2 Players option selected." << std::endl;           
             break;
         case 3:
-            std::cout << "Map option selected." << std::endl;
-            // Show map or perform map-related operations
+            std::cout << "Map option selected." << std::endl;            
             break;
         case 4:
-            std::cout << "Settings option selected." << std::endl;
-            // Show settings or perform settings-related operations
+            std::cout << "Settings option selected." << std::endl;          
             break;
         case 5:
-            std::cout << "User Manual option selected." << std::endl;
-            // Show user manual
+            std::cout << "User Manual option selected." << std::endl;            
             break;
         case 6: {
-            std::cout << "Select Color option selected." << std::endl;
-            // Prompt the user to select a color
+            std::cout << "Select Color option selected." << std::endl;           
             std::cout << "Available colors: Red, Green, Blue" << std::endl;
             std::cout << "Enter your color choice: ";
             std::string color; // Move the declaration of 'color' outside the switch block
@@ -46,8 +40,7 @@ void handleOption(int option) {
             break;
         }
         case 7:
-            std::cout << "Exiting the game. Goodbye!" << std::endl;
-            // Perform any necessary cleanup and exit the program
+            std::cout << "Exiting the game. Goodbye!" << std::endl;           
             break;
         default:
             std::cout << "Invalid option. Please select a valid option." << std::endl;
