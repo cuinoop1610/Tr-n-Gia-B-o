@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+#include <windows.h>
+using namespace std;
+
+void displayMenu() {
+    system("cls");
+    cout << "=== GAME MENU ===" << endl;
+    cout << "1. 1 Player" << endl;
+    cout << "2. 2 Players" << endl;
+    cout << "3. Map" << endl;
+    cout << "4. Settings" << endl;
+    cout << "5. User Manual" << endl;
+    cout << "6. Select Color" << endl;
+    cout << "7. Exit" << endl;
+    cout << "================" << endl;
+}
+
+void handleOption(int option) {
+    system("cls");
+
+    switch (option) {
+        case 1:
+            cout << "1 Player option selected." << endl;
+            break;
+        case 2:
+            cout << "2 Players option selected." << endl;
+            break;
+        case 3:
+            cout << "Map option selected." << endl;
+            break;
+        case 4:
+            cout << "Settings option selected." << endl;
+            break;
+        case 5:
+            cout << "User Manual option selected." << endl;
+            break;
+        case 6: {
+            cout << "Select Color option selected." << endl;
+            cout << "Available colors: Red, Green, Blue" << endl;
+            cout << "Enter your color choice: ";
+            string color;
+            cin >> color;
+            cout << "Selected color: " << color << endl;
+            break;
+        }
+        case 7:
+            cout << "Exiting the game. Goodbye!" << endl;
+            break;
+        default:
+            cout << "Invalid option. Please select a valid option." << endl;
+            break;
+    }
+
+    Sleep(2000);
+}
+
+int main() {
+    int option;
+
+    do {
+        displayMenu();
+
+        cout << "Enter your choice: ";
+        cin >> option;
+
+        handleOption(option);
+
+        cout << endl;
+
+    } while (option != 7);
+
+    return 0;
+}
