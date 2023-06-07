@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> // Include the <string> header for using the string type
+#include <string>
 
 void displayMenu() {
     std::cout << "=== GAME MENU ===" << std::endl;
@@ -34,7 +34,7 @@ void handleOption(int option) {
             std::cout << "Select Color option selected." << std::endl;           
             std::cout << "Available colors: Red, Green, Blue" << std::endl;
             std::cout << "Enter your color choice: ";
-            std::string color; // Move the declaration of 'color' outside the switch block
+            std::string color;
             std::cin >> color;
             std::cout << "Selected color: " << color << std::endl;
             break;
